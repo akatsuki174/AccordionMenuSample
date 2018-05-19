@@ -39,7 +39,7 @@ extension ViewController {
     }
 
     private func cellTitleForRowAtIndexPath(_ indexPath: IndexPath) -> String? {
-        return ""
+        return viewModel.cellTitle(indexPath: indexPath)
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

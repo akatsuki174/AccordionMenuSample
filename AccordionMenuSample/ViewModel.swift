@@ -23,6 +23,14 @@ class ViewModel {
         if sectionCount() == 0 { return nil }
         return sectionContents[section].categoryTitle
     }
+
+    func cellTitle(indexPath: IndexPath) -> String? {
+        if sectionCount() == 0 { return nil }
+        if let genreTitles = sectionContents[indexPath.section].genreTitles {
+            return genreTitles[indexPath.row]
+        }
+        return nil
+    }
     
 }
 
