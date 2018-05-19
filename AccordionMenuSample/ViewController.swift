@@ -6,6 +6,7 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView(frame: .zero)
 
         addSectionÇontents()
     }
@@ -30,8 +31,10 @@ extension ViewController {
         return viewModel.sectionCount()
     }
 
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.categoryTitle(section: section)
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = SectionHeaderView.instance()
+        header.setTitle(title: viewModel.categoryTitle(section: section))
+        return header
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

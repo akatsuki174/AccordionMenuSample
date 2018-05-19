@@ -22,7 +22,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9j-a1-d3y">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="u9j-a1-d3y">
                     <rect key="frame" x="464" y="34" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="G7y-uS-5xE"/>
@@ -40,10 +40,13 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="imageView" destination="u9j-a1-d3y" id="T09-Py-yr6"/>
-                <outlet property="titleLabel" destination="z9O-CK-GtN" id="BVs-2T-Hby"/>
+                <outlet property="imageView" destination="u9j-a1-d3y" id="8et-wY-wTl"/>
+                <outlet property="titleLabel" destination="z9O-CK-GtN" id="hne-KS-JKx"/>
             </connections>
             <point key="canvasLocation" x="95" y="-143"/>
         </view>
     </objects>
+    <resources>
+        <image name="down-arrow" width="24" height="24"/>
+    </resources>
 </document>

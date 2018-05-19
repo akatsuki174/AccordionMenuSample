@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E3135AF6209F4BF300B2BDD8 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3135AF5209F4BF300B2BDD8 /* SectionHeaderView.xib */; };
+		E3135AF8209F4C8600B2BDD8 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3135AF7209F4C8600B2BDD8 /* SectionHeaderView.swift */; };
 		E3653B5F209C5F4200FF6A51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3653B5E209C5F4200FF6A51 /* AppDelegate.swift */; };
 		E3653B61209C5F4200FF6A51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3653B60209C5F4200FF6A51 /* ViewController.swift */; };
 		E3653B64209C5F4200FF6A51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3653B62209C5F4200FF6A51 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E3135AF5209F4BF300B2BDD8 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		E3135AF7209F4C8600B2BDD8 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		E3653B5B209C5F4200FF6A51 /* AccordionMenuSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccordionMenuSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3653B5E209C5F4200FF6A51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3653B60209C5F4200FF6A51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				E3653B5E209C5F4200FF6A51 /* AppDelegate.swift */,
 				E3653B60209C5F4200FF6A51 /* ViewController.swift */,
 				E3653B70209D411D00FF6A51 /* ViewModel.swift */,
+				E3135AF7209F4C8600B2BDD8 /* SectionHeaderView.swift */,
+				E3135AF5209F4BF300B2BDD8 /* SectionHeaderView.xib */,
 				E3653B62209C5F4200FF6A51 /* Main.storyboard */,
 				E3653B65209C5F4400FF6A51 /* Assets.xcassets */,
 				E3653B67209C5F4400FF6A51 /* LaunchScreen.storyboard */,
@@ -128,6 +134,7 @@
 				E3653B69209C5F4400FF6A51 /* LaunchScreen.storyboard in Resources */,
 				E3653B66209C5F4400FF6A51 /* Assets.xcassets in Resources */,
 				E3653B64209C5F4200FF6A51 /* Main.storyboard in Resources */,
+				E3135AF6209F4BF300B2BDD8 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 				E3653B61209C5F4200FF6A51 /* ViewController.swift in Sources */,
 				E3653B71209D411D00FF6A51 /* ViewModel.swift in Sources */,
 				E3653B5F209C5F4200FF6A51 /* AppDelegate.swift in Sources */,
+				E3135AF8209F4C8600B2BDD8 /* SectionHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
