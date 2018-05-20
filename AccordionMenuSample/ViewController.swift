@@ -27,6 +27,8 @@ class ViewController: UITableViewController {
 
     @objc func toggleCategoryHeader(gestureRecognizer: UITapGestureRecognizer) {
         guard let header = gestureRecognizer.view as? SectionHeaderView else { return }
+        // nilにしないと上下矢印が一瞬重なって見えてしまう
+        header.setImage(isOpen: nil)
         viewModel.changeIsOpen(section: header.section)
         tableView.beginUpdates()
         tableView.reloadSections([header.section], with: .fade)
@@ -44,6 +46,7 @@ extension ViewController {
         header.setTitle(title: viewModel.categoryTitle(section: section))
         header.section = section
         header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.toggleCategoryHeader(gestureRecognizer: ))))
+        header.setImage(isOpen: viewModel.isOpen(in: section))
         return header
     }
 

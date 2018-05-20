@@ -32,6 +32,11 @@ class ViewModel {
         return nil
     }
 
+    func isOpen(in section: Int) -> Bool {
+        // TODO: もっと安全に書く
+        return sectionContents[section].isOpen
+    }
+
     func changeIsOpen(section: Int) {
         // TODO: もっと安全に書く
         let isOpen = sectionContents[section].isOpen

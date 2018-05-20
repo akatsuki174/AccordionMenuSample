@@ -16,4 +16,11 @@ class SectionHeaderView: UIView {
         titleLabel.text = title
     }
 
+    func setImage(isOpen: Bool?) {
+        guard let isOpen = isOpen else {
+            imageView.image = nil
+            return
+        }
+        imageView.image = isOpen ? UIImage(named: "up-arrow") : UIImage(named: "down-arrow")
+    }
 }
