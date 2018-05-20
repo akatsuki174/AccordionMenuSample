@@ -31,7 +31,12 @@ class ViewModel {
         }
         return nil
     }
-    
+
+    func changeIsOpen(section: Int) {
+        // TODO: もっと安全に書く
+        let isOpen = sectionContents[section].isOpen
+        sectionContents[section].isOpen = !isOpen
+    }
 }
 
 struct SectionContents {

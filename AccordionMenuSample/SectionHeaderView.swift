@@ -4,6 +4,7 @@ class SectionHeaderView: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    var section: Int = 0
 
     class func instance() -> SectionHeaderView {
         let nib = UINib(nibName: "SectionHeaderView", bundle: nil)

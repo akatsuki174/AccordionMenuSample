@@ -24,6 +24,14 @@ class ViewController: UITableViewController {
         viewModel.addSectionContent(content: SectionContents(categoryTitle: "5", genreTitles: ["5-1", "5-2"]))
         viewModel.addSectionContent(content: SectionContents(categoryTitle: "6", genreTitles: ["6-1", "6-2", "6-3", "6-4", "6-5"]))
     }
+
+    @objc func toggleCategoryHeader(gestureRecognizer: UITapGestureRecognizer) {
+        guard let header = gestureRecognizer.view as? SectionHeaderView else { return }
+        viewModel.changeIsOpen(section: header.section)
+        tableView.beginUpdates()
+        tableView.reloadSections([header.section], with: .fade)
+        tableView.endUpdates()
+    }
 }
 
 extension ViewController {
@@ -34,6 +42,8 @@ extension ViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = SectionHeaderView.instance()
         header.setTitle(title: viewModel.categoryTitle(section: section))
+        header.section = section
+        header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.toggleCategoryHeader(gestureRecognizer: ))))
         return header
     }
 
