@@ -33,12 +33,12 @@ class ViewModel {
     }
 
     func isOpen(in section: Int) -> Bool {
-        // TODO: もっと安全に書く
+        if sectionContents.isEmpty { return false }
         return sectionContents[section].isOpen
     }
 
     func changeIsOpen(section: Int) {
-        // TODO: もっと安全に書く
+        if sectionContents.isEmpty { return }
         let isOpen = sectionContents[section].isOpen
         sectionContents[section].isOpen = !isOpen
     }
