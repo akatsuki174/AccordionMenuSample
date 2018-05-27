@@ -9,6 +9,12 @@ class ViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero)
 
         addSectionContents()
+
+        let button = UIButton(frame: CGRect(x: (self.view.frame.width / 2) - 100, y: self.view.frame.height - 150, width: 200, height: 50))
+        button.setTitle("Change row animation", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.backgroundColor = UIColor.gray
+        view.addSubview(button)
     }
 
     override func didReceiveMemoryWarning() {
