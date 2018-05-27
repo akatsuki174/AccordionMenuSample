@@ -8,7 +8,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
 
-        addSectionÇontents()
+        addSectionContents()
     }
 
     override func didReceiveMemoryWarning() {
@@ -16,7 +16,7 @@ class ViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func addSectionÇontents() {
+    func addSectionContents() {
         viewModel.addSectionContent(content: SectionContents(categoryTitle: "1", genreTitles: ["1-1", "1-2", "1-3", "1-4", "1-5"]))
         viewModel.addSectionContent(content: SectionContents(categoryTitle: "2", genreTitles: ["2-1", "2-2", "2-3", "2-4"]))
         viewModel.addSectionContent(content: SectionContents(categoryTitle: "3", genreTitles: ["3-1", "3-2", "3-3"]))
