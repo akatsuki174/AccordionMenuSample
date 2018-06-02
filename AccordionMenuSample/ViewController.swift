@@ -14,6 +14,7 @@ class ViewController: UITableViewController {
         button.setTitle("Change row animation", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.backgroundColor = UIColor.gray
+        button.addTarget(self, action: #selector(self.showAnimationActionSheet), for: .touchUpInside)
         view.addSubview(button)
     }
 
@@ -39,6 +40,22 @@ class ViewController: UITableViewController {
         tableView.beginUpdates()
         tableView.reloadSections([header.section], with: .fade)
         tableView.endUpdates()
+    }
+
+    @objc func showAnimationActionSheet() {
+        let alertSheet = UIAlertController(title: "種別選択", message: "アニメーションの種類を選択してください", preferredStyle: .actionSheet)
+        for row in 0...6 {
+            let action = UIAlertAction(title: UITableViewRowAnimation(rawValue: row)?.rowName(), style: .default, handler: { _ in
+
+            })
+            alertSheet.addAction(action)
+        }
+        // automaticのrowValueが100だったので個別add
+        let automaticAction = UIAlertAction(title: UITableViewRowAnimation.automatic.rowName(), style: .default, handler: { _ in
+
+        })
+        alertSheet.addAction(automaticAction)
+        self.present(alertSheet, animated: true, completion: nil)
     }
 }
 
@@ -68,5 +85,28 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = cellTitleForRowAtIndexPath(indexPath)
         return cell
+    }
+}
+
+extension UITableViewRowAnimation {
+    func rowName() -> String {
+        switch self {
+        case .fade:
+            return "fade"
+        case .right:
+            return "right"
+        case .left:
+            return "left"
+        case .top:
+            return "top"
+        case .bottom:
+            return "bottom"
+        case .none:
+            return "none"
+        case .middle:
+            return "middle"
+        case .automatic:
+            return "automatic"
+        }
     }
 }
