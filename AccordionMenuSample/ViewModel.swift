@@ -1,6 +1,8 @@
 import UIKit
 
 class ViewModel {
+    var currentAnimation = UITableViewRowAnimation.fade
+    
     private var sectionContents: [SectionContents] = []
 
     func addSectionContent(content: SectionContents) {

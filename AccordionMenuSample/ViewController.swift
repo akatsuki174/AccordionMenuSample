@@ -38,21 +38,22 @@ class ViewController: UITableViewController {
         header.setImage(isOpen: nil)
         viewModel.changeIsOpen(section: header.section)
         tableView.beginUpdates()
-        tableView.reloadSections([header.section], with: .fade)
+        tableView.reloadSections([header.section], with: viewModel.currentAnimation)
         tableView.endUpdates()
     }
 
     @objc func showAnimationActionSheet() {
         let alertSheet = UIAlertController(title: "種別選択", message: "アニメーションの種類を選択してください", preferredStyle: .actionSheet)
         for row in 0...6 {
-            let action = UIAlertAction(title: UITableViewRowAnimation(rawValue: row)?.rowName(), style: .default, handler: { _ in
-
+            guard let animationType = UITableViewRowAnimation(rawValue: row) else { return }
+            let action = UIAlertAction(title: animationType.rowName(), style: .default, handler: { _ in
+                self.viewModel.currentAnimation = animationType
             })
             alertSheet.addAction(action)
         }
         // automaticのrowValueが100だったので個別add
         let automaticAction = UIAlertAction(title: UITableViewRowAnimation.automatic.rowName(), style: .default, handler: { _ in
-
+            self.viewModel.currentAnimation = UITableViewRowAnimation.automatic
         })
         alertSheet.addAction(automaticAction)
         self.present(alertSheet, animated: true, completion: nil)
