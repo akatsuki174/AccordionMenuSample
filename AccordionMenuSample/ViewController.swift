@@ -6,6 +6,7 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel.currentAnimation.rowName()
         tableView.tableFooterView = UIView(frame: .zero)
 
         addSectionContents()
@@ -48,12 +49,14 @@ class ViewController: UITableViewController {
             guard let animationType = UITableViewRowAnimation(rawValue: row) else { return }
             let action = UIAlertAction(title: animationType.rowName(), style: .default, handler: { _ in
                 self.viewModel.currentAnimation = animationType
+                self.title = animationType.rowName()
             })
             alertSheet.addAction(action)
         }
         // automaticのrowValueが100だったので個別add
         let automaticAction = UIAlertAction(title: UITableViewRowAnimation.automatic.rowName(), style: .default, handler: { _ in
             self.viewModel.currentAnimation = UITableViewRowAnimation.automatic
+            self.title = UITableViewRowAnimation.automatic.rowName()
         })
         alertSheet.addAction(automaticAction)
         self.present(alertSheet, animated: true, completion: nil)
