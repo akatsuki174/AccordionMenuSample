@@ -74,6 +74,7 @@ extension ViewController {
         header.section = section
         header.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.toggleCategoryHeader(gestureRecognizer: ))))
         header.setImage(isOpen: viewModel.isOpen(in: section))
+        header.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 245/255, alpha: 1.0)
         return header
     }
 
